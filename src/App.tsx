@@ -58,6 +58,7 @@ import {
   resources as partnerResources,
   routes as PartnersRoutes,
 } from './pages/partners';
+import { routes as McsProfilesRoutes } from './pages/mcs-profiles';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { darkTheme, lightTheme } from './theme';
 import { MainMenu, MenuSection } from './components/main-menu/main.menu';
@@ -202,6 +203,8 @@ const MainAntDApp: React.FC<MainAntdAppProps> = ({
       return MenuSection.TRANSACTIONS;
     if (location.pathname.startsWith(`/${MenuSection.PARTNERS}`))
       return MenuSection.PARTNERS;
+    if (location.pathname.startsWith(`/${MenuSection.MCS_PROFILES}`))
+      return MenuSection.MCS_PROFILES;
     return MenuSection.OVERVIEW;
   }, [location.pathname]);
 
@@ -284,6 +287,7 @@ const MainAntDApp: React.FC<MainAntdAppProps> = ({
                 element={<ChargingStationsRoutes />}
               />
               <Route path="/partners/*" element={<PartnersRoutes />} />
+              <Route path="/mcs-profiles/*" element={<McsProfilesRoutes />} />
               <Route path="*" element={<ErrorComponent />} />
             </Route>
           </Routes>

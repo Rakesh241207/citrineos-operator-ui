@@ -26,6 +26,7 @@ export enum MenuSection {
   AUTHORIZATIONS = 'authorizations',
   TRANSACTIONS = 'transactions',
   PARTNERS = 'partners',
+  MCS_PROFILES = 'mcs-profiles',
 }
 
 export interface MainMenuProps {
@@ -124,6 +125,11 @@ export const MainMenu = ({ activeSection }: MainMenuProps) => {
       key: `/${MenuSection.PARTNERS}`,
       label: 'Partners',
       icon: <PartnerIcon />,
+    }),
+    MenuItem({
+      key: `/${MenuSection.MCS_PROFILES}`,
+      label: 'MCS Profiles',
+      icon: <ClipboardIcon />,
     }),
   ];
 
